@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'share-tech';
+  src: url('./assets/share-tech.ttf');
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: unset;
+  text-decoration: unset;
+}
+
+body {
+  font-family: 'share-tech', sans-serif;
+  background-color: rgb(76, 76, 76);
+  color: #fff;
+}
+
+h1 {
+  display: none;
+}
+
+nav {
+  background-color: #000;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: .25rem;
+  padding-top: .5rem;
+  width: 3rem;
+  transition: width .5s ease-in-out;
+}
+
+nav:hover {
+  width: 8.5rem;
+}
+
+nav svg {
+  stroke: #fff;
+  fill: #fff;
+  width: 2.5rem;
+}
+
+#socials svg {
+  display: block;
+  padding: .25rem;
+}
+
+#map {
+  list-style: none;
+  flex: 1;
+  margin-top: 2rem;
+  margin-left: .25rem;
+}
+
+#map>li {
+  padding: 0 .25rem;
+  border-left: .5rem solid white;
+  margin-left: .75rem;
+  color: transparent;
+  transition: all .5s ease-in-out;
+}
+
+#map a {
+  visibility: hidden;
+}
+
+nav:hover>#map a {
+  transition: visibility 0s ease-in-out .5s;
+  visibility: visible;
+}
+
+nav:hover>#map>li {
+  transition: all .4s ease-in-out .3s, margin-left .6s ease-in-out;
+  margin-left: 0;
+  border-left-width: .25rem;
+  border-radius: .2rem;
+  color: #fff;
+}
