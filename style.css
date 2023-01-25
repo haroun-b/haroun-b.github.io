@@ -65,6 +65,7 @@ nav svg {
   border-left: .5rem solid white;
   margin-left: .75rem;
   color: transparent;
+  white-space: nowrap;
   transition: all .5s ease-in-out;
 }
 
