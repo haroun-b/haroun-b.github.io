@@ -48,9 +48,22 @@ nav svg {
   width: 2.5rem;
 }
 
+#socials {
+  font-size: 1.4rem;
+}
+
 #socials svg {
   display: block;
   padding: .25rem;
+}
+
+#socials a {
+  display: flex;
+  align-items: flex-end;
+}
+
+#socials span {
+  margin-left: .25rem;
 }
 
 #map {
@@ -69,11 +82,13 @@ nav svg {
   transition: all .5s ease-in-out;
 }
 
-#map a {
+#map a,
+#socials span {
   visibility: hidden;
 }
 
-nav:hover>#map a {
+nav:hover>#map a,
+nav:hover>#socials span {
   transition: visibility 0s ease-in-out .5s;
   visibility: visible;
 }
