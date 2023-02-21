@@ -131,8 +131,16 @@
     <section>
       <svg id="blob" viewBox="0 0 900 600" width="900" height="600"
         xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="blob-gradient">
+            <stop offset="30%" stop-color="#ff8094" />
+            <stop offset="100%" stop-color="#30fff4" />
+          </linearGradient>
+        </defs>
+
+
         <g transform="translate(448.2490691013085 293.3039631492889)">
-          <path fill="#BB004B">
+          <path fill="url(#blob-gradient)">
             <animateTransform attributeName="transform" attributeType="XML"
               type="rotate" from="0" to="360" dur="40s"
               repeatCount="indefinite" />
