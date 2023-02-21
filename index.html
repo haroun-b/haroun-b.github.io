@@ -7,12 +7,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Stick+No+Bills&display=swap"
+  <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap"
     rel="stylesheet">
 
   <link rel="stylesheet" href="./style.css" />
   <link rel="shortcut icon" href="./assets/logo.svg" type="image/x-icon" />
+  <script type="module" src="./script.js"></script>
   <title>Haroun B. - Full Stack Developer</title>
 </head>
 
@@ -24,11 +24,11 @@
 
 
     <ul id="map">
-      <li><a href="">Intro</a></li>
-      <li><a href="">Ongoing</a></li>
-      <li><a href="">Technologies</a></li>
-      <li><a href="">Previous Projects</a></li>
-      <li><a href="">Contact me</a></li>
+      <li><a href="#intro">Intro</a></li>
+      <li><a href="#ongoing-work">Ongoing</a></li>
+      <li><a href="#technos">Technologies</a></li>
+      <li><a href="#previous-work">Previous Projects</a></li>
+      <li><a href="#contact">Contact me</a></li>
     </ul>
 
     <div id="socials">
@@ -51,51 +51,96 @@
   <main dir="ltr">
     <section id="intro">
       <h1>Haroun B. - Full Stack Developer based in Paris</h1>
-      <p>
-        <span>Hi,</span>
-        <span>my name is Haroun</span>
-      </p>
+      <div>
+        <p>
+          <span>Hi,</span>
+          <span>my name is Haroun</span>
+        </p>
 
-      <p>
-        <span>I'm:</span> <span>an Architect,</span>
-      </p>
+        <p>
+          <span>I'm:</span> <span>an Architect</span>
+        </p>
 
-      <p>
-        <span>a</span>
-        <span>Full</span>
-        <span>Stack</span>
-        <span>Developer,</span>
-      </p>
+        <p>
+          a <span>Full Stack Developer</span>
+        </p>
 
-      <p>
-        <span>and</span>
-        <span>a</span>
-        <span>Problem</span>
-        <span>Solver</span>
-      </p>
+        <p>
+          <span>and</span>
+          <span class="cypher">a Problem Solver</span>
+        </p>
+      </div>
     </section>
 
-    <section id="ongoing">
-      <h2>What am I currently up to?</h2>
+    <section id="ongoing-work">
+      <h2>Ongoing Work</h2>
       <section>
-        <h3>Ironhack</h3>
+        <h3>Ironhack <span>Freelance Teaching Assistant</span></h3>
+        <h4>MongoDB, ExpressJS, ReactJS, NodeJS, JavaScript, HTML, CSS</h4>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus cum
+          molestiae quis quidem nostrum fuga assumenda omnis, fugit numquam
+          blanditiis perspiciatis ducimus impedit! Eius similique ratione
+          accusantium, eveniet cum quisquam!</p>
       </section>
 
       <section>
-        <h3>Devision</h3>
+        <h3>Devision <span>Freelance Front-End Engineer</span></h3>
+        <h4>SolidJS, JavaScript, HTML, SASS, CSS</h4>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Molestias
+          incidunt, iusto debitis eius nihil unde aliquid a veritatis dolores
+          beatae temporibus ex sit fugit? Ullam accusamus corporis placeat?
+          Asperiores, amet.</p>
       </section>
     </section>
 
     <section id="technos">
-      <h2>Technologies I'm currently using</h2>
+      <h2>Current Technologies</h2>
     </section>
 
-    <section id="previous-projects">
-      <h2>Previous projects</h2>
+    <section id="previous-work">
+      <h2>Previous Work</h2>
+      <section>
+        <h3>iframe Resizer</h3>
+        <a href=""></a>
+        <h4>JavaScript, HTML, CSS</h4>
+        <p></p>
+      </section>
+      <section>
+        <h3>PacMan - On the Grid</h3>
+        <a href=""></a>
+        <h4>JavaScript, HTML, CSS</h4>
+        <p></p>
+      </section>
+      <section>
+        <h3>Bottle Me Maybe - REST API</h3>
+        <a href=""></a>
+        <h4>NodeJS, ExpressJS, MongoDB</h4>
+        <p></p>
+      </section>
     </section>
 
     <section id="contact">
       <h2>Contact Me</h2>
+      <p>Have an interesting project you would like to build? Let's make it
+        happen</p>
+      <address>
+        <a href="mailto:contact@harryb.dev">contact@harryb.dev</a>
+      </address>
+    </section>
+
+    <section>
+      <svg id="blob" viewBox="0 0 900 600" width="900" height="600"
+        xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(448.2490691013085 293.3039631492889)">
+          <path fill="#BB004B">
+            <animateTransform attributeName="transform" attributeType="XML"
+              type="rotate" from="0" to="360" dur="40s"
+              repeatCount="indefinite" />
+            <animate dur="10s" repeatCount="indefinite" attributeName="d"
+              values="M90.4 -146.9C125.5 -136.3 168 -128.9 200.3 -105C232.6 -81 254.8 -40.5 241.4 -7.7C228 25 178.9 50 148.9 77.9C118.8 105.7 107.6 136.4 86 158.4C64.3 180.4 32.2 193.7 3.3 187.9C-25.5 182.2 -51 157.3 -94.3 147.8C-137.6 138.3 -198.7 144.2 -225 122.1C-251.2 100 -242.6 50 -228 8.4C-213.4 -33.2 -192.9 -66.3 -169.8 -93.9C-146.7 -121.5 -121.1 -143.4 -92.4 -157.7C-63.7 -171.9 -31.8 -178.5 -2.1 -174.9C27.7 -171.3 55.3 -157.5 90.4 -146.9;M139.4 -239.5C178.8 -218.7 207.6 -177.6 226.4 -134.3C245.3 -91 254.1 -45.5 250.8 -1.9C247.5 41.7 232 83.3 201.3 106.1C170.7 128.9 124.8 132.9 88.8 144.6C52.7 156.2 26.3 175.6 -5.1 184.4C-36.5 193.2 -73 191.4 -110.8 180.8C-148.6 170.1 -187.8 150.6 -201.8 118.9C-215.9 87.3 -205 43.7 -202.4 1.5C-199.8 -40.7 -205.5 -81.3 -185.7 -103C-165.9 -124.6 -120.4 -127.3 -85.2 -150.4C-50 -173.6 -25 -217.3 12.5 -239C50 -260.6 100 -260.2 139.4 -239.5;M90.4 -146.9C125.5 -136.3 168 -128.9 200.3 -105C232.6 -81 254.8 -40.5 241.4 -7.7C228 25 178.9 50 148.9 77.9C118.8 105.7 107.6 136.4 86 158.4C64.3 180.4 32.2 193.7 3.3 187.9C-25.5 182.2 -51 157.3 -94.3 147.8C-137.6 138.3 -198.7 144.2 -225 122.1C-251.2 100 -242.6 50 -228 8.4C-213.4 -33.2 -192.9 -66.3 -169.8 -93.9C-146.7 -121.5 -121.1 -143.4 -92.4 -157.7C-63.7 -171.9 -31.8 -178.5 -2.1 -174.9C27.7 -171.3 55.3 -157.5 90.4 -146.9" />
+          </path>
+        </g>
+      </svg>
     </section>
   </main>
 

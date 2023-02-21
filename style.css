@@ -3,6 +3,11 @@
   src: url('./assets/share-tech.ttf');
 }
 
+@font-face {
+  font-family: 'moby-monospace';
+  src: url('./assets/moby-monospace.ttf');
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -24,6 +29,8 @@ body {
 h1 {
   display: none;
 }
+
+/* == nav ========================= */
 
 nav {
   background-color: #000;
@@ -103,6 +110,12 @@ nav:hover>#map>li {
   color: #fff;
 }
 
+nav:hover+main {
+  padding-left: 8.5rem;
+}
+
+/* == nav ========================= */
+
 main,
 main>section {
   height: 100vh;
@@ -117,8 +130,24 @@ main {
 
 main>section {
   scroll-snap-align: start;
+  display: grid;
+  place-content: center;
 }
 
-nav:hover+main {
-  padding-left: 8.5rem;
+/* == intro ========================= */
+
+#intro {
+  font-size: 5vw;
+  font-family: 'moby-monospace', monospace;
+  letter-spacing: -.2ch;
 }
+
+#intro>div>p {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+
+
+/* == intro ========================= */
