@@ -140,15 +140,18 @@ main>section {
   font-size: 5vw;
   font-family: 'moby-monospace', monospace;
   letter-spacing: -.2ch;
+  color: hsla(0, 0%, 100%, 0.6);
 }
 
 #intro>div>p {
   display: flex;
   justify-content: space-between;
-  position: relative;
 }
 
-
+#intro strong {
+  all: unset;
+  color: hsla(0, 0%, 100%, 1);
+}
 
 /* == intro ========================= */
 
