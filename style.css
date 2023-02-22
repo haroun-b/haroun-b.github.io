@@ -97,6 +97,7 @@ nav svg {
 }
 
 #map>li {
+  padding: 0 .25rem;
   border-left: .5rem solid white;
   margin-left: .75rem;
   color: transparent;
@@ -107,12 +108,18 @@ nav svg {
 #map a,
 #socials span {
   visibility: hidden;
-  display: none;
+}
+
+nav>* {
+  pointer-events: none;
+}
+
+nav:hover>* {
+  pointer-events: auto;
 }
 
 nav:hover>#map a,
 nav:hover>#socials span {
-  display: inline-block;
   transition: visibility 0s ease-in-out .5s;
   visibility: visible;
 }
