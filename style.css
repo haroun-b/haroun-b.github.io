@@ -1,14 +1,21 @@
 @font-face {
-  font-family: 'share-tech';
-  src: url('./assets/share-tech.ttf');
+  font-family: 'moby-monospace';
+  src: url('./assets/fonts/moby-monospace.ttf');
 }
 
 @font-face {
-  font-family: 'moby-monospace';
-  src: url('./assets/moby-monospace.ttf');
+  font-family: 'share-tech';
+  src: url('./assets/fonts/share-tech.ttf');
 }
 
-* {
+@font-face {
+  font-family: 'rubik';
+  src: url('./assets/fonts/rubik.ttf');
+}
+
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -20,7 +27,8 @@ a {
 }
 
 body {
-  font-family: 'share-tech', sans-serif;
+  --closed-nav-width: 3rem;
+  --open-nav-width: 8.5rem;
   background-color: hsl(225, 67%, 5%);
   color: #fff;
   overflow: hidden;
@@ -30,20 +38,26 @@ h1 {
   display: none;
 }
 
+nav,
+section>h4 {
+  font-family: 'share-tech', sans-serif;
+}
+
 /* == nav ========================= */
 
 nav {
   background-color: #000;
-  border-right: 1px solid hsla(0, 0%, 100%, 0.25);
+  /* border-right: 1px solid hsla(0, 0%, 100%, 0.25); */
   position: fixed;
   height: 100vh;
   display: flex;
+  z-index: 2;
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
   padding: .25rem;
   padding-top: .5rem;
-  width: 3rem;
+  width: var(--closed-nav-width);
   transition: width .5s ease-in-out;
 }
 
@@ -83,7 +97,6 @@ nav svg {
 }
 
 #map>li {
-  padding: 0 .25rem;
   border-left: .5rem solid white;
   margin-left: .75rem;
   color: transparent;
@@ -94,10 +107,12 @@ nav svg {
 #map a,
 #socials span {
   visibility: hidden;
+  display: none;
 }
 
 nav:hover>#map a,
 nav:hover>#socials span {
+  display: inline-block;
   transition: visibility 0s ease-in-out .5s;
   visibility: visible;
 }
@@ -111,7 +126,7 @@ nav:hover>#map>li {
 }
 
 nav:hover+main {
-  padding-left: 8.5rem;
+  filter: blur(10px);
 }
 
 /* == nav ========================= */
@@ -122,10 +137,12 @@ main>section {
 }
 
 main {
-  padding-left: 3rem;
+  font-family: rubik, sans-serif;
+  margin-left: var(--closed-nav-width);
   transition: padding-left .5s ease-in-out;
   overflow-y: scroll;
   scroll-snap-type: y mandatory;
+  transition: .5s;
 }
 
 main>section {
@@ -134,12 +151,43 @@ main>section {
   place-content: center;
 }
 
+section>h2,
+#intro {
+  font-family: 'moby-monospace',
+    monospace;
+  letter-spacing: -.2ch;
+}
+
+section>h2 {
+  font-size: 4vw;
+  grid-column: 1 / -1;
+}
+
+section>h3,
+section>h4 {
+  font-weight: 300;
+}
+
+section>h3 {
+  font-size: 2.4vw;
+}
+
+section>h4 {
+  color: hsla(0, 0%, 100%, 0.6);
+}
+
+#ongoing-work {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+
+
+
 /* == intro ========================= */
 
 #intro {
   font-size: 5vw;
-  font-family: 'moby-monospace', monospace;
-  letter-spacing: -.2ch;
   color: hsla(0, 0%, 100%, 0.6);
 }
 
