@@ -1,5 +1,6 @@
 const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+const blob = document.querySelector("#blob");
 
 document.querySelectorAll(".cypher").forEach(element => {
   let intervalId = null;
@@ -30,4 +31,14 @@ document.querySelectorAll(".cypher").forEach(element => {
       iteration += 1 / 3;
     }, 30);
   });
+});
+
+
+document.querySelector("main").addEventListener("mousemove", (event) => {
+  const { clientX, clientY } = event;
+
+  blob.animate({
+    left: `${clientX}px`,
+    top: `${clientY}px`
+  }, { duration: 3000 });
 });

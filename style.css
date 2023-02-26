@@ -47,7 +47,7 @@ section>h4 {
 
 nav {
   background-color: #000;
-  /* border-right: 1px solid hsla(0, 0%, 100%, 0.25); */
+  border-right: 1px solid hsla(0, 0%, 100%, 0.25);
   position: fixed;
   height: 100vh;
   display: flex;
@@ -216,5 +216,25 @@ section>h4 {
 
 
 /* == blob ========================= */
+#blob {
+  position: fixed;
+  z-index: -1;
+  width: 70vmax;
+  height: 70vmax;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  opacity: 0.5;
+}
+
+#blur {
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: -1;
+  backdrop-filter: blur(12vmax);
+}
 
 /* == blob ========================= */
