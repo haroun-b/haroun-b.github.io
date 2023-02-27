@@ -17,7 +17,7 @@
 </head>
 
 <body>
-  <section id="background">
+  <div id="background">
     <svg id="blob" viewBox="50 0 800 600" width="800" height="600"
       xmlns="http://www.w3.org/2000/svg">
       <defs>
@@ -40,7 +40,7 @@
     </svg>
 
     <div id="blur"></div>
-  </section>
+  </div>
 
   <nav>
     <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
@@ -79,24 +79,29 @@
       <h1>Haroun B. - Full Stack Developer based in Paris</h1>
       <div>
         <p>
-          <span>Hi,</span>
-          <span>my name is <strong>Haroun</strong></span>
+          <span class="trail-empty">Hi, my name is</span>
+          <strong>Haroun B</strong>
         </p>
 
         <p>
-          <span>I'm:</span> <strong class="cypher">an Architect</strong>
+          <span class="filler left"></span>
+          <span class="trail-empty">I am:</span>
+          <strong class="cypher">an Architect</strong>
         </p>
 
-        <p><strong class="cypher">a Full Stack Developer</strong></p>
+        <p>
+          <strong class="cypher">a Full Stack Developer</strong>
+        </p>
 
         <p>
-          <span>and</span>
+          <span class="trail-empty">&</span>
           <strong class="cypher">a Problem Solver</strong>
+          <span class="filler right"></span>
         </p>
       </div>
     </section>
 
-    <section id="ongoing-work">
+    <section id="ongoing-work" class="work">
       <h2>Ongoing Work</h2>
       <section>
         <h3>Teaching Assistant <span>@Ironhack</span></h3>
@@ -121,7 +126,7 @@
       <h2>Current Technologies</h2>
     </section>
 
-    <section id="previous-work">
+    <section id="previous-work" class="work">
       <h2>Previous Work</h2>
       <section>
         <h3>iframe Resizer</h3>

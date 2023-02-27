@@ -29,8 +29,11 @@ a {
 body {
   --closed-nav-width: 3rem;
   --open-nav-width: 8.5rem;
+  --dim-color: hsla(0, 0%, 100%, .6);
+  --main-color: hsla(0, 0%, 100%, 1);
+
   background-color: hsl(225, 67%, 5%);
-  color: #fff;
+  color: var(--main-color);
   overflow: hidden;
 }
 
@@ -66,8 +69,8 @@ nav:hover {
 }
 
 nav svg {
-  stroke: #fff;
-  fill: #fff;
+  stroke: var(--main-color);
+  fill: var(--main-color);
   width: 2.5rem;
 }
 
@@ -98,7 +101,7 @@ nav svg {
 
 #map>li {
   padding: 0 .25rem;
-  border-left: .5rem solid white;
+  border-left: .5rem solid var(--main-color);
   margin-left: .75rem;
   color: transparent;
   white-space: nowrap;
@@ -129,7 +132,7 @@ nav:hover>#map>li {
   margin-left: 0;
   border-left-width: .25rem;
   border-radius: .2rem;
-  color: #fff;
+  color: var(--main-color);
 }
 
 nav:hover+main {
@@ -180,14 +183,16 @@ section>h3 {
 }
 
 section>h4 {
-  color: hsla(0, 0%, 100%, 0.6);
+  color: var(--dim-color);
 }
 
 #ongoing-work {
   grid-template-columns: repeat(2, 1fr);
 }
 
-
+.work>section {
+  background-color: red;
+}
 
 
 
@@ -195,7 +200,7 @@ section>h4 {
 
 #intro {
   font-size: 5vw;
-  color: hsla(0, 0%, 100%, 0.6);
+  color: var(--dim-color);
 }
 
 #intro>div>p {
@@ -205,7 +210,32 @@ section>h4 {
 
 #intro strong {
   all: unset;
-  color: hsla(0, 0%, 100%, 1);
+  color: var(--main-color);
+}
+
+#intro>div>p:first-child {
+  word-spacing: -.2ch;
+}
+
+.trail-empty {
+  margin-right: .8ch;
+}
+
+#intro .filler {
+  background-color: var(--dim-color);
+  background-clip: content-box;
+  padding: 1ch 0 .44ch;
+  flex-grow: .9;
+  position: relative;
+  left: .1ch;
+}
+
+#intro .filler.left {
+  padding-right: .8ch;
+}
+
+#intro .filler.right {
+  padding-left: .8ch;
 }
 
 /* == intro ========================= */
@@ -215,7 +245,7 @@ section>h4 {
 
 
 
-/* == blob ========================= */
+/* == background ========================= */
 #blob {
   position: fixed;
   z-index: -1;
@@ -237,4 +267,4 @@ section>h4 {
   backdrop-filter: blur(12vmax);
 }
 
-/* == blob ========================= */
+/* == background ========================= */
