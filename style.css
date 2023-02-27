@@ -31,8 +31,10 @@ body {
   --open-nav-width: 8.5rem;
   --dim-color: hsla(0, 0%, 100%, .6);
   --main-color: hsla(0, 0%, 100%, 1);
+  --highlight-color: red;
+  --bg-color: hsl(225, 67%, 5%);
 
-  background-color: hsl(225, 67%, 5%);
+  background-color: var(--bg-color);
   color: var(--main-color);
   overflow: hidden;
 }
@@ -184,6 +186,16 @@ section>h3 {
 
 section>h4 {
   color: var(--dim-color);
+  padding-bottom: 2ch;
+}
+
+.work {
+  gap: 3ch;
+}
+
+.work,
+.work>section {
+  padding: 4% 6%;
 }
 
 #ongoing-work {
@@ -191,7 +203,32 @@ section>h4 {
 }
 
 .work>section {
-  background-color: red;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  background: rgb(4, 8, 21);
+  background: linear-gradient(170deg, hsla(226, 68%, 5%, 1) 0%, hsla(226, 68%, 5%, 0) 80%);
+  border-color: var(--main-color);
+  border-style: solid;
+  border-width: .5ch 0ch 0ch .5ch;
+  transition: all .2s ease-in-out;
+}
+
+.work>section:hover {
+  bottom: .4ch;
+  right: .4ch;
+}
+
+.work>section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  translate: -54% -52%;
+  content: "+";
+  font-family: 'moby-monospace',
+    monospace;
+  font-size: 6ch;
+  color: var(--highlight-color);
 }
 
 
@@ -222,7 +259,7 @@ section>h4 {
 }
 
 #intro .filler {
-  background-color: var(--dim-color);
+  background-color: var(--highlight-color);
   background-clip: content-box;
   padding: 1ch 0 .44ch;
   flex-grow: .9;
