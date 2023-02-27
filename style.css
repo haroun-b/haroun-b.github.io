@@ -228,6 +228,7 @@ section>h4 {
   flex-grow: .9;
   position: relative;
   left: .1ch;
+  animation: 3s ease-in 1s alternate infinite breathe;
 }
 
 #intro .filler.left {
@@ -236,6 +237,16 @@ section>h4 {
 
 #intro .filler.right {
   padding-left: .8ch;
+}
+
+@keyframes breathe {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: .2;
+  }
 }
 
 /* == intro ========================= */
