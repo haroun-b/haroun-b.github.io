@@ -154,9 +154,13 @@ nav:hover+main {
 
 /* == nav ========================= */
 
-main,
-main>section {
+main {
   height: 100vh;
+}
+
+main>section {
+  height: 99vh;
+  margin: 2vh 0;
 }
 
 main {
@@ -345,11 +349,15 @@ section>h4 {
   color: var(--highlight-color);
   font-size: calc(1rem + 1.6vw);
   margin-top: 3vw;
-  transition: all 1s ease-in-out;
+}
+
+#contact>h2 {
+  font-size: calc(.6rem + 5.7vw);
+  text-shadow: none;
 }
 
 #contact.active>h2 {
-  font-size: calc(.6rem + 5.7vw);
+  transition: all .5s ease-in;
   color: var(--main-color);
   text-shadow: 0 0 10px var(--main-color),
     0 0 20px var(--main-color),

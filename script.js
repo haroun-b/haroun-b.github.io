@@ -42,3 +42,13 @@ document.querySelector("main").addEventListener("mousemove", (event) => {
     top: `${clientY}px`
   }, { duration: 3000 });
 });
+
+
+const intersectionObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) console.log(entry.target);
+    entry.target.classList[entry.isIntersecting ? "add" : "remove"]("active");
+  });
+
+});
+document.querySelectorAll("main>section").forEach(section => intersectionObserver.observe(section));
