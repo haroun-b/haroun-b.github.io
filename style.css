@@ -29,7 +29,7 @@ a {
 }
 
 body {
-  --closed-nav-width: 3rem;
+  --closed-nav-width: calc(2rem + 2vw);
   --open-nav-width: 8.5rem;
   --dim-color: hsla(0, 0%, 100%, .6);
   --main-color: hsla(0, 0%, 100%, 1);
@@ -53,14 +53,19 @@ address {
 }
 
 .clickable:hover,
-a:hover {
-  transition: color .2s ease-in-out;
+a:hover,
+a:hover svg {
+  transition: color, stroke, fill .2s ease-in-out;
   color: var(--action-color);
+  stroke: var(--action-color);
+  fill: var(--action-color);
 }
 
 /* == nav ========================= */
 
 nav {
+  --map-font-size: calc(1rem + 1vw);
+  --socials-font-size: calc(var(--closed-nav-width) / 2);
   background-color: #000;
   border-right: 1px solid hsla(0, 0%, 100%, 0.25);
   position: fixed;
@@ -77,17 +82,17 @@ nav {
 }
 
 nav:hover {
-  width: 8.5rem;
+  width: calc(var(--map-font-size) * 8);
 }
 
 nav svg {
   stroke: var(--main-color);
   fill: var(--main-color);
-  width: 2.5rem;
+  width: calc(var(--socials-font-size) * 1.6);
 }
 
 #socials {
-  font-size: 1.4rem;
+  font-size: var(--socials-font-size);
 }
 
 #socials svg {
@@ -109,13 +114,13 @@ nav svg {
   flex: 1;
   margin-top: 2rem;
   margin-left: .25rem;
-  font-size: calc(.8rem + .3vw);
+  font-size: var(--map-font-size);
 }
 
 #map>li {
   padding: 0 .25rem;
   border-left: .5rem solid var(--main-color);
-  margin-left: .75rem;
+  margin-left: calc(var(--closed-nav-width) / 2 - .75rem);
   color: transparent;
   white-space: nowrap;
   transition: all .5s ease-in-out;
