@@ -33,7 +33,7 @@ body {
   --open-nav-width: 8.5rem;
   --dim-color: hsla(0, 0%, 100%, .6);
   --main-color: hsla(0, 0%, 100%, 1);
-  --highlight-color: #7fffd4;
+  --highlight-color: hsl(160, 100%, 75%);
   --action-color: hsl(0, 0%, 60%);
   --bg-color: hsl(225, 67%, 5%);
 
@@ -119,11 +119,15 @@ nav svg {
 
 #map>li {
   padding: 0 .25rem;
-  border-left: .5rem solid var(--main-color);
+  border-left: .5rem solid var(--dim-color);
   margin-left: calc(var(--closed-nav-width) / 2 - .75rem);
   color: transparent;
   white-space: nowrap;
   transition: all .5s ease-in-out;
+}
+
+#map>li.active {
+  border-color: var(--main-color);
 }
 
 #map a,
@@ -145,11 +149,19 @@ nav:hover>#socials span {
   visibility: visible;
 }
 
+nav:hover>#map a:hover {
+  color: var(--main-color);
+}
+
 nav:hover>#map>li {
-  transition: all .4s ease-in-out .3s, margin-left .6s ease-in-out;
+  transition: all .4s ease-in-out .3s, margin-left .6s ease-in-out, color none, border-color none;
   margin-left: 0;
   border-left-width: .25rem;
   border-radius: .2rem;
+  color: var(--dim-color);
+}
+
+nav:hover>#map>li.active {
   color: var(--main-color);
 }
 

@@ -48,6 +48,10 @@ const intersectionObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) console.log(entry.target);
     entry.target.classList[entry.isIntersecting ? "add" : "remove"]("active");
+    document
+      .querySelector(`[href="#${entry.target.id}"]`)
+      .parentNode
+      .classList[entry.isIntersecting ? "add" : "remove"]("active");
   });
 
 });
