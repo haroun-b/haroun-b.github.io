@@ -19,7 +19,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
+  /* outline: 1px solid red; */
 }
 
 a {
@@ -47,7 +47,8 @@ h1 {
 }
 
 nav,
-section>h4 {
+section>h4,
+address {
   font-family: 'share-tech', sans-serif;
 }
 
@@ -108,6 +109,7 @@ nav svg {
   flex: 1;
   margin-top: 2rem;
   margin-left: .25rem;
+  font-size: calc(.8rem + .3vw);
 }
 
 #map>li {
@@ -183,7 +185,7 @@ section>h2 {
   font-size: calc(.6rem + 4vw);
   grid-column: 1 / -1;
   text-align: center;
-  padding-right: .2ch;
+  padding-right: .5ch;
 }
 
 section>h3,
@@ -205,8 +207,7 @@ section>h4 {
 /* == work ========================= */
 
 .work {
-  gap: 3vmin;
-  font-size: calc(.8rem + .3vw);
+  gap: 4vmin;
 }
 
 .work>section {
@@ -217,7 +218,7 @@ section>h4 {
   border-style: solid;
   border-width: .5ch 0ch 0ch .5ch;
   transition: all .2s ease-in-out;
-  padding: 2ch 3ch;
+  padding: calc(.5ch + 1vw) calc(.5ch + 1.5vw);
   width: 70vw;
   margin: 0 auto;
 }
@@ -246,7 +247,7 @@ section>h4 {
   height: 3ch;
   overflow: hidden;
   white-space: nowrap;
-  text-overflow: ellipsis " ...";
+  text-overflow: ellipsis "...";
 }
 
 /* == work ========================= */
@@ -307,11 +308,6 @@ section>h4 {
 
 /* == intro ========================= */
 
-
-
-
-
-
 /* == background ========================= */
 #blob {
   position: fixed;
@@ -335,3 +331,32 @@ section>h4 {
 }
 
 /* == background ========================= */
+
+
+/* == contact ========================= */
+#contact {
+  padding: 0 10vw;
+  text-align: center;
+  font-size: calc(.6rem + 1.6vw);
+  color: var(--dim-color);
+}
+
+#contact>address {
+  color: var(--highlight-color);
+  font-size: calc(1rem + 1.6vw);
+  margin-top: 3vw;
+  transition: all 1s ease-in-out;
+}
+
+#contact.active>h2 {
+  font-size: calc(.6rem + 5.7vw);
+  color: var(--main-color);
+  text-shadow: 0 0 10px var(--main-color),
+    0 0 20px var(--main-color),
+    0 0 40px var(--main-color),
+    0 0 80px var(--main-color),
+    0 0 120px var(--main-color),
+    0 0 160px var(--main-color);
+}
+
+/* == contact ========================= */
