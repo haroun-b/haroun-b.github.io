@@ -1,0 +1,8 @@
+<svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M11 0V1H5V0H11Z" fill="#CACACA" />
+  <rect width="1" height="1" transform="matrix(-1 0 0 1 9 4)" fill="black" />
+  <path d="M10 4H11V5H13V6H12V7H9V6H10V4Z" fill="#FF833F" />
+  <path fill-rule="evenodd" clip-rule="evenodd"
+    d="M10 2V3H11V4H10V6H9V7H10V8H11V9H12V11H11V12H10V13H3V12H2V11H1V9H0V7H2V8H3V7H6V6H5V3H6V2H10ZM8 4V5H9V4H8Z"
+    fill="#FFC700" />
+</svg>

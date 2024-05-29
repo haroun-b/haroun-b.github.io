@@ -1,0 +1,172 @@
+@use "sass:math";
+@use "colors";
+@use "utils" as *;
+
+.work-card {
+  width: 100%;
+  border: var(--width-border) solid colors.$border;
+  border-radius: r-size(1);
+  padding: r-size(1);
+  font-size: r-size(0.75);
+  color: colors.$content-muted;
+
+  &:hover {
+    border-color: colors.$content;
+
+    .links svg {
+      fill: colors.$content;
+    }
+  }
+
+  > header {
+    $font-size: r-size(0.875);
+
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    height: fit-content;
+
+    > img {
+      height: $font-size;
+      margin-right: r-size(0.5);
+    }
+
+    > h2 {
+      margin: 0;
+      font-size: $font-size;
+      line-height: $font-size;
+      color: colors.$content;
+    }
+
+    > .project-type {
+      text-transform: uppercase;
+      margin-left: auto;
+    }
+  }
+
+  > main > p {
+    min-height: 6ch;
+    margin: r-size(0.75) 0 r-size(1);
+  }
+
+  > footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: r-size(0.875);
+
+    > .license {
+      font-weight: 300;
+      margin-right: r-size(0.5);
+      display: flex;
+      align-items: flex-start;
+
+      svg {
+        display: inline;
+        height: r-size(1);
+        margin-right: r-size(0.25);
+        fill: colors.$content-muted;
+      }
+    }
+
+    > .links {
+      $icon-size: r-size(1.25);
+
+      height: $icon-size;
+      display: flex;
+      align-items: center;
+      gap: r-size(0.5);
+
+      a {
+        @include hover-feedback(1.1);
+      }
+
+      svg {
+        width: $icon-size;
+        height: $icon-size;
+        fill: #b3b3b3;
+      }
+    }
+
+    > .tech-stack {
+      width: 100%;
+      max-width: r-size(20);
+      margin-left: auto;
+
+      $langs: (
+        "javascript": #f1e05a,
+        "html": #e34c26,
+        "css": #563d7c,
+        "go": #00add8,
+        "shell": #89e051
+      );
+      @each $lang, $color in $langs {
+        .#{$lang} {
+          &,
+          &::before {
+            background-color: $color;
+          }
+        }
+      }
+
+      > .ratio {
+        background-color: rgba(110, 118, 129, 0.4);
+        display: flex;
+        height: 6px;
+        border-radius: 3px;
+        margin-bottom: r-size(0.4);
+        overflow: hidden;
+
+        &,
+        span {
+          outline: 1px solid #000;
+        }
+      }
+
+      .legend {
+        $gap: r-size(0.9);
+
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        row-gap: r-size(0.5);
+
+        > span {
+          position: relative;
+          margin-left: $gap;
+          font-size: r-size(0.75);
+          color: colors.$content-muted;
+          background-color: transparent;
+
+          &::before {
+            $size: 1ch;
+
+            content: "";
+            width: $size;
+            height: $size;
+            border-radius: 50%;
+            position: absolute;
+            left: -$size * 1.6;
+            top: 50%;
+            translate: 0 -50%;
+          }
+
+          &::after {
+            content: attr(data-ratio) "%";
+            font-size: 85%;
+            margin-left: r-size(0.2);
+            margin-right: r-size(0.75);
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1330px) {
+  .work-card {
+    width: 49%;
+  }
+}

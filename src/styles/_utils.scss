@@ -1,0 +1,18 @@
+// responsive size
+@function r-size($v, $func: "max") {
+  @if $func == "max" {
+    @return max(#{$v * 2.4}vmin, #{$v}rem);
+  } @else if $func == "min" {
+    @return min(#{$v * 2.4}vmin, #{$v}rem);
+  } @else {
+    @error "Invalid function name: #{$func}. Expected 'max' or 'min'.";
+  }
+}
+
+@mixin hover-feedback($scale: 0.95) {
+  transition: scale 0.2s ease-out;
+
+  &:hover {
+    scale: $scale;
+  }
+}

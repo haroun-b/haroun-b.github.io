@@ -1,0 +1,139 @@
+@use "colors";
+@use "utils" as *;
+@use "work-card";
+
+#works {
+  $clr-active-tab: colors.$main;
+  $clr-active-filter: colors.$content;
+
+  position: relative;
+
+  // #region | Scroll and Scrollbar
+  overflow-y: scroll;
+  // For Chrome and Safari
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  // For IE and Edge
+  -ms-overflow-style: none;
+  // For Firefox
+  scrollbar-width: none;
+  // #endregion | Scroll and Scrollbar
+
+  h1 {
+    display: none;
+  }
+
+  // #region | Tabs and Filters
+  %label {
+    text-align: center;
+    position: relative;
+  }
+
+  %checkable {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+  }
+
+  .tabs {
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    background-color: colors.$bg;
+    border-bottom: var(--width-border) solid colors.$border-muted;
+    margin-bottom: r-size(0.75);
+
+    label {
+      @extend %label;
+      font-size: r-size(0.875);
+      line-height: r-size(1.25);
+      font-weight: 600;
+      width: 100%;
+      padding: r-size(1) 0 r-size(0.625);
+    }
+
+    [type="radio"] {
+      @extend %checkable;
+    }
+  }
+
+  .filters {
+    display: flex;
+    gap: r-size(0.5);
+    margin: 0 r-size(1) r-size(0.8);
+
+    label {
+      @extend %label;
+      outline: var(--width-border) solid colors.$border-muted;
+      border-radius: r-size(0.375);
+      color: colors.$content-muted;
+      font-size: r-size(0.75);
+      line-height: r-size(1.125);
+      font-weight: 500;
+      padding: 2px r-size(0.5);
+    }
+
+    [type="checkbox"] {
+      @extend %checkable;
+    }
+  }
+  // #endregion | Tabs and Filters
+
+  @mixin work-tab-filter($show, $hide) {
+    &[data-tab="#{$show}"] {
+      ##{$show}-tab {
+        border-bottom: 2px solid $clr-active-tab;
+        color: $clr-active-tab;
+      }
+
+      ##{$show} {
+        display: block;
+      }
+
+      ##{$hide} {
+        display: none;
+      }
+    }
+  }
+  @include work-tab-filter("projects", "events");
+  @include work-tab-filter("events", "projects");
+
+  #projects {
+    @mixin projects-type-filter($type) {
+      &.#{$type} label[for="#{$type}"] {
+        outline: 1px solid $clr-active-filter;
+        color: $clr-active-filter;
+      }
+
+      &.#{$type} .work-card.#{$type} {
+        display: block;
+      }
+    }
+
+    .work-card {
+      display: none;
+    }
+
+    &[class=""] .work-card,
+    &:not([class]) .work-card {
+      display: block;
+    }
+
+    @include projects-type-filter("web");
+    @include projects-type-filter("extension");
+    @include projects-type-filter("cli");
+  }
+
+  .container {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: r-size(1);
+    padding: 0 r-size(0.75);
+  }
+}
